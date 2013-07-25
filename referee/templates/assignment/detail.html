@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title> {{game.age_group}}:{{game.location}}:{{game.date_time}} </title>
+</head>
+<body>
+	<div class = "games">
+		<h1>{{game.age_group}}:{{game.location}}:{{game.date_time}} </h1>
+		{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+		{% if not game.center %}
+		<input type="hidden" name="uname" id="uname" value="{{ user.username }} />
+			<form action="{% url 'signup' game.id %}" method="post">
+			{% csrf_token %}
+			<input type="radio" name="signup" id="signup" value="center" />
+			<label>Center Referee</label><br />
+			<input type="submit" value="Submit" />
+			</form>
+		{% endif %}
+		{% if not game.AR_1 %}
+		<input type="hidden" name="uname" id="uname" value="{{ user.username }} />
+			<form action="{% url 'signup' game.id %}" method="post">
+			{% csrf_token %}
+			<input type="radio" name="signup" id="signup" value="AR1" />
+			<label>AR Referee</label><br />
+			<input type="submit" value="Submit" />
+			</form>
+		{% endif %}
+		{% if not game.AR_2 %}
+		<input type="hidden" name="uname" id="uname" value="{{ user.username }} />
+			<form action="{% url 'signup' game.id %}" method="post">
+			{% csrf_token %}
+			<input type="radio" name="signup" id="signup" value="AR2" />
+			<label>AR Referee</label><br />
+			<input type="submit" value="Submit" />
+			</form>
+		{% endif %}
+	</div>
+</body>
+</html>

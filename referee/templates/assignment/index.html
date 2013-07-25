@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Open Assignments</title>
+</head>
+<body>
+{% if open_games_list %}
+    <ul>
+    {% for game in open_games_list %}
+        <li><a href="/assignment/{{ game.id }}/">
+		{{ game.age_group }}
+		{{ game.location }}
+		{{ game.date_time }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No gamess are available.</p>
+{% endif %}
+</body>
+</html>
