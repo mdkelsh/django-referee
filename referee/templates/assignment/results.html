@@ -1,0 +1,49 @@
+<html>
+	<title>
+		{{ game.age_group }}
+		{{ game.location }}
+		{{ game.date_time }}
+	</title>
+	<style type="text/css">
+	.content {
+	padding: 10px;
+	width: auto;
+	position: relative;
+	left: auto;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	font-family: Tahoma, Geneva, sans-serif;
+	margin: auto;
+	height: auto;
+	text-align: center;
+	list-style-position: inside;
+}
+    .content ul li p1 {
+	font-weight: bolder;
+	color: #F00;
+}
+    </style>
+<body>
+    <div class="content">
+    <h3>
+		{{ game.age_group }} |
+		{{ game.location }} |
+		{{ game.date_time }} 
+	</h3>
+      <ul>
+        <li>Center: {{game.center}}</li>
+            {% if game.AR_1 %}
+        <li>Assistant Referee 1: {{game.AR_1}}</li>
+            {% else %}
+        <li>Assistant Referee 1: <p1>OPEN</p1></li>
+            {% endif %}	
+            {% if game.AR_2 %}
+        <li>Assistant Referee 2: {{game.AR_2}}</li>
+            {% else %}
+        <li>Assistant Referee 2: <p1>OPEN</p1></li>
+            {% endif %}
+      </ul>
+    </div>
+	</body>
+</html>
