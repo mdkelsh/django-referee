@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 
 class Assignment(models.Model):
 	OPEN = 'Open'
@@ -25,7 +26,7 @@ class Assignment(models.Model):
 		if (self.center and self.AR_1 and self.AR_2):
 			self.status == 'CLOSED'
 			return False
-		if (self.status == 'CLOSED'):
-			return False
 		else:
 			return True
+
+	

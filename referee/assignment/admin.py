@@ -9,7 +9,7 @@ class RefereeAdmin(admin.ModelAdmin):
 	}),
 	('Referees', {
 		'classes': ('colapse',),
-		'fields': ('Center', 'AR_1', 'AR_2')
+		'fields': ('center', 'AR_1', 'AR_2')
 	}),
     )
 admin.site.register(Assignment)
